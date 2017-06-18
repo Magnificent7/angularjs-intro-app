@@ -1,0 +1,14 @@
+<div ng-app="app">
+  <div ng-controller="stuffCtrl">
+
+    {{ message }}<br>
+
+    <input ng-model="message">
+
+    <div id="reviews">
+      <h4>AngularJS Reviews:</h4>
+      <li ng-repeat="review in reviews">{{ review }}</li>
+    </div>
+
+  </div>
+</div>
