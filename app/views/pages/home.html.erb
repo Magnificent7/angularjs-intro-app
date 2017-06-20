@@ -4,7 +4,7 @@
     {{ message }}<br>
     <input ng-model="message">
 
-    <div id="reviews">
+    <!-- <div id="reviews">
       <h4>AngularJS Reviews:</h4>
       <li ng-repeat="review in reviews">{{ review }}
       <input ng-model="review"></li>
@@ -12,7 +12,24 @@
 
     <h4>Leave your own review:</h4>
     <input ng-model="newReview">
-    <button ng-click="addReview(newReview)">Add Review</button>
+    <button ng-click="addReview(newReview)">Add Review</button> -->
+
+    <ul>
+      <li ng-repeat="task in tasks track by $index" ng-click="completeTask($index)" ng-if="isCatTask(task.text)"><strong>Priority: {{ task.priority }}</strong> - {{ task.assigned_to }}: {{ task.text }} </li>
+    </ul>
+
+    <h4>New Cat Task!</h4>
+    <label>Task:</label><input ng-model="newTaskText"><br>
+    <label>Priority:</label><input ng-model="newTaskPriority"><br>
+    <label>Assigned To:</label><input ng-model="newTaskAssignedTo"><br>
+    <button ng-click="addTask(newTaskText, newTaskPriority, newTaskAssignedTo)">Add Task</button>
 
   </div>
 </div>
+
+
+
+
+
+
+
